@@ -107,15 +107,15 @@ public class Main {
         int years = 10; // кол-во лет
         int fyear = 1; // текущий год
         while (fyear <= years) {
-            population += ((birth - death) * 12000);
+            population += population/1000 * (birth - death);
             System.out.println("Год " + fyear++ + ", численность населения составляет " + population);
         }
 
         //task4
         System.out.println("Task 4");
         int month = 1; // счетчик месяцев
-        long currentAmount = (long) 15000.00;  // текущая сумма вклада
-        long finAmount = (long) 12000000.00; // нужная сумма
+        long currentAmount = 15000;  // текущая сумма вклада
+        long finAmount = 12000000; // нужная сумма
         while (currentAmount < finAmount) {
             currentAmount *= 1.07;
             System.out.println("Месяц " + month++ + ", сумма накоплений равна " + currentAmount + " рублей");
@@ -123,7 +123,7 @@ public class Main {
 
         //task5
         System.out.println("Task 5");
-        currentAmount = 15000;
+        currentAmount = 15000L;
         month = 0;
         while (currentAmount <= finAmount) {
             currentAmount = (int) (currentAmount * 1.07);
@@ -132,36 +132,39 @@ public class Main {
                 System.out.println("Месяц " + month + ", сумма накопления равна " + currentAmount);
                 }
             }
+
         //task6
         System.out.println("Task 6");
-        currentAmount = 15000;
+        currentAmount = 15000L;
         month = 0;
         int term = 108;
-        while (currentAmount <= term) {
+        while (month <= term) {
             currentAmount *= 1.07;
             month++;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ", сумма накопления равна " + currentAmount);
             }
-        //памагите :'( не выводит ничего((( все перепроверила, но не выводит (
         }
+
         //task7
         System.out.println("Task 7");
-        int Friday = 5;
+        int friday = 5;
         int quantity = 31;
         do {
-            System.out.println("Сегодня пятница, " + Friday + "-е число. Необходимо подготовить отчет");
-            Friday += 7;
+            System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет");
+            friday += 7;
             }
-        while (Friday < quantity);
+        while (friday < quantity);
 
         //task8
         System.out.println("Task 8");
         int Year = 2024;
         int start = Year - 200;
         int stop = Year + 100;
-        for (i = start; i <= stop; i++)
+        for (i = start; i <= stop; i++) {
             if (i % 79 == 0) {
                 System.out.println(i);
         }
-    }}
+        }
+    }
+}
